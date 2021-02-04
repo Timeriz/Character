@@ -25,8 +25,11 @@ public class Cam : MonoBehaviour
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90, 90);
 
-        cam.transform.eulerAngles = new Vector3(xRotation, yRotation, 0.0f);
 
+    }
+    public void LateUpdate()
+    {
+        cam.transform.eulerAngles = new Vector3(xRotation, yRotation, 0.0f);
     }
     private void FixedUpdate()
     {
